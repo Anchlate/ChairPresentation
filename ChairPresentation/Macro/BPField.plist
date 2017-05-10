@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pillowFuction</key>
+	<string>头枕</string>
+	<key>application_charge</key>
+	<string>主管办公椅</string>
+	<key>application_staff</key>
+	<string>职员办公椅</string>
+	<key>application_metting</key>
+	<string>会议椅</string>
+	<key>application_chatting</key>
+	<string>洽谈椅</string>
+	<key>application_office</key>
+	<string>班前椅</string>
+	<key>application_relaxation</key>
+	<string>休闲椅</string>
+	<key>application_train</key>
+	<string>训练椅</string>
+	<key>section</key>
+	<string>倾仰段数</string>
+	<key>lieStyle</key>
+	<string>躺舒宝选项</string>
+	<key>handrail_function</key>
+	<string>扶手</string>
+	<key>cushion_angle</key>
+	<string>座角度可调</string>
+	<key>cushion_deep</key>
+	<string>座深可调</string>
+	<key>cushion_height</key>
+	<string>坐垫</string>
+	<key>chairBack_height</key>
+	<string>椅背</string>
+	<key>chairBack_waist</key>
+	<string>腰枕</string>
+	<key>chairBack_waistAdjust</key>
+	<string>腰部自动调节</string>
+	<key>fabric_cushion</key>
+	<string>坐垫</string>
+	<key>fabric_backcushion</key>
+	<string>背垫</string>
+	<key>fabric_pillow</key>
+	<string>头枕</string>
+</dict>
+</plist>

@@ -1,0 +1,178 @@
+//
+//  PrefixHeader.pch
+//  ChairPresentation
+//
+//  Created by chf on 16/3/19.
+//  Copyright © 2016年 bp1010. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+/** __OBJC__ **/
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreTelephony/CTCallCenter.h>
+
+/** the three */
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import <SDWebImageManager.h>
+#import <JSONModel/JSONModel.h>
+#import <FMDB.h>
+
+#import "MBProgressHUD+MJ.h"
+#import "JSONKit.h"
+
+#import "BPNavigationController.h"
+#import "NSString+BPString.h"
+#import "NSFileManager+BPFileManager.h"
+#import "UIImage+ANImage.h"
+#import "NSString+BPColor.h"
+#import "BPSearchChairDB.h"
+#import "BPChair.h"
+
+#import "BPFilters.h"
+
+#import "NSArray+BPArray.h"
+
+#define DeviceVertical (([[UIDevice currentDevice]orientation]==UIDeviceOrientationPortrait || [[UIDevice currentDevice]orientation]==UIDeviceOrientationPortraitUpsideDown) ? YES : NO)
+
+#define APPVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+#define APPBuild [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+/** 根据UI设计图上面的像素转化成点数pt 屏幕适配*/
+#define MATCHSIZE(px) px*(SCREEN_WIDTH/2048)
+//([UIScreen mainScreen].scale/2)
+
+/** check the Device system version is or not more than 7.0 */
+#define THANIOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES : NO)
+
+
+#define MainColor RGBColorAndAlpha(89, 177, 227, 1)
+
+/** view default color*/
+#define ViewBackgroundColor RGBColorAndAlpha(255, 255, 255, 1)
+
+#define NarBackgroundDefaultColorAlpha(alpha) RGBColorAndAlpha(89, 177, 227, alpha)
+
+#define NavigationBarDefaultTintColor [UIColor whiteColor]
+
+#define NavigationBarDefaultBarTintColor RGBColorAndAlpha(89, 177, 227, 1)
+
+#define NavigationBarDefaultTitleColor [UIColor whiteColor]
+
+
+#define WEAKSELF(weakSelf) __weak __typeof(&*self)weakSelf = self
+
+/**
+ *  you will get the screen width when you use the SCREEN_WIDTH
+ *
+ */
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+/**
+ *  you will get the screen height when you user the SCREEN_HEIGHT
+ *
+ */
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+/**
+ *  you will get the height of status
+ *
+ */
+#define STATUS_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+
+
+/**
+ *  The funtion of this macro definition is the same with function of '[UIColor colorWithRed: green: blue: alpha:]'
+ *
+ *  @param r color red
+ *  @param g color green
+ *  @param b color blue
+ *  @param a alpha
+ *
+ *  @return the color value
+ */
+#define RGBColorAndAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define kFontJZunYuanWithSize(s) [UIFont fontWithName:@"JZunYuan" size:(s)]
+
+/**
+ *  create an async global queue
+ *
+ *  @param block when you create an async global queue, it will finish the work in the block
+ *
+ *  @return nil
+ */
+#define kBack(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+
+/**
+ *  create an async main queue
+ *
+ *  @param block when you create an async main queue, it will finish the work in the block on UI thread
+ *
+ *  @return nil
+ */
+#define kMaim(block) dispatch_async(dispatch_get_main_queue(),block)
+
+/**
+ * 缓存路径
+ *
+ */
+#define kCachesPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+
+/**
+ define the Log function to replace NSLog function
+ */
+#ifdef DEBUG
+#define Log(...) NSLog(__VA_ARGS__)
+#else
+#define Log(...)
+#endif
+
+
+#endif
+/** __OBJC__ end **/
+
+#define isSignIn @"isSignIn"
+
+
+
+#define BPFiltersNoti @"BPFiltersNoti"
+
+
+#define BPConditionSerachNoti @"BPConditionSerachNoti"
+
+#define BPEnterSerachNoti @"BPEnterSerachNoti"
+
+#define BPClearFiltersNoti @"BPClearFiltersNoti"
+
+#define kDataBase @"chairDB.sqlite"
+
+#define kChairTable @"ChairPresentationTable"
+
+
+#define Role @"Role"
+
+
+
+#define BPSERIES @"serial"
+#define BPAPPLICATION @"Application"
+#define BPFABRICS @"Fabrics"
+#define BPFUNCTION @"Function"
+#define BPPRICE @"Price"
+#define BPSEARCH @"Search"
+
+
+#endif /* PrefixHeader_pch */
